@@ -8,7 +8,6 @@
         static void Main(string[] args)
         {
             bool run = true;
-            bool creatingNewEntry = false;
 
             while (run)
             {
