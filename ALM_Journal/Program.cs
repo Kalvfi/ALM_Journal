@@ -13,7 +13,6 @@
             {
                 ShowMenu();
                 ShowEntry(toShow);
-
                 
                 Console.Write("Zadej příkaz: ");
                 string prikaz = Console.ReadLine()!;

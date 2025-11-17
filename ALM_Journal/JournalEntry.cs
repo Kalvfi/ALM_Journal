@@ -10,8 +10,8 @@ namespace ALM_Journal
     {
         public JournalEntry? Next;
         public JournalEntry? Previous;
-        public DateTime Date;
-        public string? Text;
+        public DateTime Date { get; private set; }
+        public string? Text { get; private set; }
 
         public JournalEntry(DateTime date, string? text)
         {
