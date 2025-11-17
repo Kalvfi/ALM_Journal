@@ -22,10 +22,10 @@ namespace ALM_Journal
                 return count;
             }
         }
-        public JournalEntry? FirstEntry;
-        public JournalEntry? LastEntry;
+        public JournalEntry? FirstEntry { get; private set; }
+        public JournalEntry? LastEntry { get; private set; }
 
-        public void addAfter(JournalEntry newEntry, JournalEntry? existingEntry)
+        public void AddAfter(JournalEntry newEntry, JournalEntry? existingEntry)
         {
             if (existingEntry == null)
             {
@@ -57,7 +57,7 @@ namespace ALM_Journal
             }
         }
 
-        public void addBefore(JournalEntry newEntry, JournalEntry? existingEntry)
+        public void AddBefore(JournalEntry newEntry, JournalEntry? existingEntry)
         {
             if (existingEntry == null)
             {
@@ -89,17 +89,17 @@ namespace ALM_Journal
             }
         }
 
-        public void addFirst(JournalEntry newEntry)
+        public void AddFirst(JournalEntry newEntry)
         {
-            addBefore(newEntry, FirstEntry);
+            AddBefore(newEntry, FirstEntry);
         }
 
-        public void addLast(JournalEntry newEntry)
+        public void AddLast(JournalEntry newEntry)
         {
-            addAfter(newEntry, LastEntry);
+            AddAfter(newEntry, LastEntry);
         }
 
-        public void remove(JournalEntry entry)
+        public void Remove(JournalEntry entry)
         {
             if (entry.Previous == null)
             {
@@ -117,23 +117,22 @@ namespace ALM_Journal
             {
                 entry.Next.Previous = entry.Previous;
             }
-            entry.Next = null;
-            entry.Previous = null;
+            entry = null;
         }
 
-        public void removeFirst()
+        public void RemoveFirst()
         {
             if (FirstEntry != null)
             {
-                remove(FirstEntry);
+                Remove(FirstEntry);
             }
         }
 
-        public void removeLast()
+        public void RemoveLast()
         {
             if (LastEntry != null)
             {
-                remove(LastEntry);
+                Remove(LastEntry);
             }
         }
     }

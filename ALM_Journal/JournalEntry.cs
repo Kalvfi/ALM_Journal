@@ -13,5 +13,11 @@ namespace ALM_Journal
         public DateTime Date;
         public string? Text;
 
+        public JournalEntry(DateTime date, string? text)
+        {
+            Date = date;
+            Text = text;
+        }
+
     }
 }
