@@ -98,7 +98,7 @@
             string text = "";
 
             Console.WriteLine("Text:");
-            string line = null;
+            string line = null!;
             while (line != "uloz")
             {
                 line = Console.ReadLine()!;
@@ -113,7 +113,7 @@
         private static void SaveCurrentEntry(DateTime date, string text)
         {
             JournalEntry newEntry = new JournalEntry(date, text);
-            journal.AddLast(newEntry);
+            journal.AddAfter(newEntry, toShow);
             toShow = newEntry;
         }
 
